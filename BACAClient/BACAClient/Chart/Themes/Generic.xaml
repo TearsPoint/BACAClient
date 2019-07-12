@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/SerialChart.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/ValueAxis.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/ValueGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/CategoryAxis.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/ColumnGraph.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/LineGraph.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/AreaGraph.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/Legend.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/Indicator.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/PieChart.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/Slice.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Chart/Themes/Balloon.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+</ResourceDictionary>

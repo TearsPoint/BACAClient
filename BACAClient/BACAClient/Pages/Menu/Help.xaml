@@ -1,0 +1,24 @@
+﻿<base:BasePage  x:Class="BACAClient.Pages.Menu.Help" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+        xmlns:base="clr-namespace:BACAClient.Header"  xmlns:local="clr-namespace:BACAClient.Pages.Menu" base:BasePage.Loaded="BasePage_Loaded" Page.Title="Help" 
+         >
+    <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ColumnDefinition.Width="120" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border Border.BorderBrush="#FFCCCCCC" Border.BorderThickness="0,0,1,0">
+            <StackPanel Name="Button" Margin="0,1,0,0">
+                <UserControl:Button x:Name="help1" Click="Button_Click" TypeName="help1" Width="120" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" ContentControl.Content="使用帮助" BackGround="#3399cc" Control.Foreground="#FFFFFFFF" Hover="#cccccc" xmlns:p7="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                <UserControl:Button x:Name="help5" Click="Button_Click" TypeName="help5" Width="120" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" ContentControl.Content="浏览历史" BackGround="White" Control.Foreground="#FF716B6B" Hover="#cccccc" xmlns:p7="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+            </StackPanel>
+        </Border>
+        <Frame x:Name="Right" Grid.Column="1" Control.Background="#FFFFFFFF" Frame.NavigationUIVisibility="Hidden" />
+    </Grid>
+</base:BasePage>
+ 
+
+ 

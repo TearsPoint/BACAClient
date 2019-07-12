@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="BACAClient.UserControls.Controls.Page" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+     Margin="20,0" Height="40" >
+    <Grid VerticalAlignment="Center" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ColumnDefinition.Width="1*" />
+            <ColumnDefinition ColumnDefinition.Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="PageInfo" TextBlock.Foreground="#FF333333" Style="{DynamicResource TextBlockStyle}" />
+        <WrapPanel Name="PageOperat" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,20,0">
+            <TextBlock VerticalAlignment="Center">
+        <Hyperlink x:Name="First" TextElement.Foreground="#FF333333" Style="{StaticResource hyberlinkEffect}">
+          首页
+        </Hyperlink>
+            </TextBlock>
+            <TextBlock Margin="8,0" VerticalAlignment="Center">
+        <Hyperlink x:Name="Up" TextElement.Foreground="#FF333333" Style="{StaticResource hyberlinkEffect}">
+          前一页
+        </Hyperlink>
+            </TextBlock>
+            <TextBlock VerticalAlignment="Center">
+        <Hyperlink Name="Down" TextElement.Foreground="#FF333333" Style="{StaticResource hyberlinkEffect}">
+          后一页
+        </Hyperlink>
+            </TextBlock>
+            <TextBlock Margin="8,0" VerticalAlignment="Center">
+        <Hyperlink Name="End" TextElement.Foreground="#FF333333" Style="{StaticResource hyberlinkEffect}">
+          尾页
+        </Hyperlink>
+            </TextBlock>
+            <TextBlock TextBlock.Text="转到" TextBlock.Foreground="#FF333333" Style="{DynamicResource TextBlockStyle}" />
+            <TextBox Name="Jump" Style="{DynamicResource PageTextBox}" Margin="8,0" InputMethod.IsInputMethodEnabled="False" />
+            <TextBlock TextBlock.Text="页" TextBlock.Foreground="#FF333333" Style="{DynamicResource TextBlockStyle}" />
+        </WrapPanel>
+    </Grid>
+</UserControl>
+ 
+
+ 

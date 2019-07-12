@@ -1,0 +1,16 @@
+﻿<UserControl  x:Class="BACAClient.Template.HisDetail.Good" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.Template.HisDetail" Width="39" Height="35" Cursor="Hand" >
+    <Grid Name="grid">
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Height="13" Width="13" Source="pack://application:,,,/BACAClient;component/Images/Pages/Nav/HisDetail/Icon/white_good.png" />
+            <TextBlock Name="GoodCount" TextBlock.Foreground="#FFFFFFFF" Style="{DynamicResource TextBlockStyle}" />
+        </WrapPanel>
+    </Grid>
+</UserControl>
+ 
+
+ 

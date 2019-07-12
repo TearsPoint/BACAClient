@@ -1,0 +1,48 @@
+﻿<Window x:Class="BACAClient.OtherWindow.PDF" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:BACAClient.OtherWindow"   Window.WindowStartupLocation="CenterScreen" Window.AllowsTransparency="True" Window.WindowState="Maximized" Control.Background="#FF819494" UIElement.Opacity="0.9" Window.Topmost="True" Window.WindowStyle="None" Window.ShowInTaskbar="False" Window.ResizeMode="NoResize" Window.Title="PDF"  >
+    <Grid HorizontalAlignment="Center" UIElement.Opacity="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ColumnDefinition.Width="100" />
+            <ColumnDefinition ColumnDefinition.Width="auto" />
+            <ColumnDefinition ColumnDefinition.Width="100" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="70" />
+                <RowDefinition />
+                <RowDefinition RowDefinition.Height="70" />
+            </Grid.RowDefinitions>
+            <UserControl:Button x:Name="Up" Click="Icon_Click" Grid.Row="1" TypeName="Up"  Width="50"  Height="50"  HorizontalAlignment="Center"  VerticalAlignment="Center" UIElement.Visibility="Hidden"  ToolTip="上一页" BackGround="pack://application:,,,/BACAClient;component/Images/PDF/up_u1278.png" Hover="pack://application:,,,/BACAClient;component/Images/PDF/up_u1268_mouseOver.png"   xmlns:UserControl="clr-namespace:BACAClient.Template" />
+        </Grid>
+        <ScrollViewer Name="scrollviewer" Style="{DynamicResource ScrollViewerStyle}" Grid.Column="1">
+            <Grid Name="fulltext" UIElement.Opacity="1">
+                <Label Name="wait" HorizontalAlignment="Center" VerticalAlignment="Center" ContentControl.Content="请稍等，正在加载..." Control.Foreground="#FFFFFFFF" Control.FontSize="20" Style="{DynamicResource MyLabelStyles}" />
+                <Image Name="pdf" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+        </ScrollViewer>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="70" />
+                <RowDefinition />
+                <RowDefinition RowDefinition.Height="70" />
+            </Grid.RowDefinitions>
+            <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Center">
+                <UserControl:Button x:Name="DownLoad" Click="Icon_Click" TypeName="DownLoad" Width="27" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="下载" BackGround="pack://application:,,,/BACAClient;component/Images/PDF/xz_hui.png" Hover="pack://application:,,,/BACAClient;component/Images/PDF/xz_bai.png" xmlns:p5="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                <UserControl:Button x:Name="Close" Click="Icon_Click" TypeName="Close" Margin="10,20" Width="27" Height="27" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="关闭" BackGround="pack://application:,,,/BACAClient;component/Images/PDF/close_u1268.png" Hover="pack://application:,,,/BACAClient;component/Images/PDF/close_u1268_mouseOver.png" xmlns:p5="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+            </WrapPanel>
+            <UserControl:Button x:Name="Down" Click="Icon_Click" Grid.Row="1" TypeName="Down"  Width="50"  Height="50" UIElement.Visibility="Hidden"  HorizontalAlignment="Center"  VerticalAlignment="Center"  ToolTip="下一页" BackGround="pack://application:,,,/BACAClient;component/Images/PDF/down_u1266.png" Hover="pack://application:,,,/BACAClient;component/Images/PDF/down_u1266_mouseOver.png"   xmlns:UserControl="clr-namespace:BACAClient.Template" />
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Hyperlink TextElement.Foreground="#FFFFFFFF" TextElement.FontWeight="Bold" Style="{StaticResource hyberlinkEffect}">
+          意见反馈
+        </Hyperlink>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
+ 
+
+ 

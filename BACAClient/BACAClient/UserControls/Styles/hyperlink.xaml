@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="hyberlinkEffect" Style.TargetType="{x:Type Hyperlink}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="TextElement.Foreground" Setter.Value="#FF3399CC" />
+        <Setter Setter.Property="TextElement.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="TextBlock.TextDecorations" Setter.Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Trigger.Property="ContentElement.IsMouseOver" Trigger.Value="True">
+                <Setter Setter.Property="TextElement.Foreground" Setter.Value="#FF3399CC" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

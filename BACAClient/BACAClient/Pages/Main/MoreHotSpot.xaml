@@ -1,0 +1,38 @@
+﻿<base:BasePage  x:Class="BACAClient.Pages.Main.MoreHotSpot" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+        xmlns:base="clr-namespace:BACAClient.Header" base:BasePage.SizeChanged="_SizeChanged" base:BasePage.Loaded="_Loaded" Page.Title="MoreHotSpot" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition RowDefinition.Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Border.BorderBrush="#FFCCCCCC" Border.BorderThickness="0,0,0,1">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ColumnDefinition.Width="5" />
+                    <ColumnDefinition ColumnDefinition.Width="161" />
+                    <ColumnDefinition ColumnDefinition.Width="161" />
+                    <ColumnDefinition ColumnDefinition.Width="161" />
+                    <ColumnDefinition ColumnDefinition.Width="161" />
+                </Grid.ColumnDefinitions>
+                <UserControl:Button x:Name="More1" Click="ChangeType" Grid.Column="1" TypeName="近期热门" Width="161" Height="26" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentControl.Content="近期热门" Control.BorderBrush="#FFCCCCCC" BackGround="white" Hover="white" Control.Foreground="#FF716B6B"  
+                  xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                <UserControl:Button x:Name="More2" Click="ChangeType" Grid.Column="2" TypeName="点赞推荐" Width="161" Height="26" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentControl.Content="点赞推荐" Control.BorderBrush="#FFCCCCCC" BackGround="white" Hover="white" Control.Foreground="#FF716B6B" xmlns:p6="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                <UserControl:Button x:Name="More3" Click="ChangeType" Grid.Column="3" TypeName="热门" Width="161" Height="26" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentControl.Content="热门" Control.BorderBrush="#FFCCCCCC" BackGround="white" Hover="white" Control.Foreground="#FF716B6B" xmlns:p6="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                <UserControl:Button x:Name="More4" Click="ChangeType" Grid.Column="4" TypeName="点赞" Width="161" Height="26" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentControl.Content="点赞" Control.BorderBrush="#FFCCCCCC" BackGround="white" Hover="white" Control.Foreground="#FF716B6B" xmlns:p6="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="1" Style="{DynamicResource ScrollViewerStyle}">
+            <Grid>
+                <TextBlock Name="IsNull" TextBlock.FontSize="28" TextBlock.Text="暂无记录" HorizontalAlignment="Center" UIElement.Visibility="Hidden" Style="{DynamicResource TextBlockStyle}" />
+                <StackPanel Name="List" HorizontalAlignment="Left" Margin="20,0" />
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</base:BasePage>
+ 
+
+ 

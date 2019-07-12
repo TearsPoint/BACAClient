@@ -1,0 +1,26 @@
+﻿<Window x:Class="BACAClient.Logon.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:BACAClient.Template" 
+        xmlns:local="clr-namespace:BACAClient.OtherWindow"
+        xmlns:UserControl="clr-namespace:BACAClient.UserControls.Controls"
+        mc:Ignorable="d"
+         Window.WindowStartupLocation="CenterScreen" Window.AllowsTransparency="True" Control.Background="Transparent" Window.WindowStyle="None" Window.ShowInTaskbar="True" Window.ResizeMode="NoResize" Height="300" Width="530" Window.Title="About">
+
+    <Border Margin="5" Border.Background="#FFFFFFFF">
+        <UIElement.Effect>
+            <DropShadowEffect DropShadowEffect.BlurRadius="10" DropShadowEffect.ShadowDepth="0" />
+        </UIElement.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="40" />
+                <RowDefinition /> 
+                <RowDefinition RowDefinition.Height="40" />
+            </Grid.RowDefinitions>
+            <uc:Button x:Name="Close" Click="Close_Click" TypeName="Close"  Margin="0,0,20,0"  Width="19"  Height="19"  ToolTip="关闭"  HorizontalAlignment="Right" BackGround="pack://application:,,,/BACAClient;component/Images/OtherWindow/u1449.png" Hover="pack://application:,,,/BACAClient;component/Images/OtherWindow/u1449_mouseOver.png"   />
+           
+        </Grid>
+    </Border>
+</Window>

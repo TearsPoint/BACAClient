@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="MyLabelStyles" Style.TargetType="{x:Type Label}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FFFFFFFF" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Top" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Top" />
+    </Style>
+    <Style x:Key="AnnouncementLabel" Style.TargetType="{x:Type Label}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF9999" />
+        <Setter Setter.Property="FrameworkElement.Height" Setter.Value="21" />
+        <Setter Setter.Property="FrameworkElement.Width" Setter.Value="247" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+    </Style>
+</ResourceDictionary>
+ 
+
+ 

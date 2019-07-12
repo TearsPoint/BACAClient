@@ -1,0 +1,21 @@
+﻿<UserControl  x:Class="BACAClient.Template.HisDetail.ReInfo" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.Template.HisDetail"
+              Cursor="Hand" Height="50" Control.Background="#FFFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <Border Border.BorderBrush="#FF999999" Border.BorderThickness="0,0,0,1">
+        <Grid Name="grid" Panel.Background="#FFFFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ColumnDefinition.Width="100" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="recordindex" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" />
+            <TextBlock Name="ReTitle" Grid.Column="1" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+        </Grid>
+    </Border>
+</UserControl>
+ 
+
+ 

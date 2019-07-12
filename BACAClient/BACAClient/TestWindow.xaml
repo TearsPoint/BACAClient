@@ -1,0 +1,82 @@
+﻿<Window x:Class="BACAClient.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:amq="clr-namespace:JCharts"
+        xmlns:local="clr-namespace:BACAClient"
+        xmlns:mdt ="clr-namespace:JetSun.MDT" 
+        mc:Ignorable="d"
+        Title="TestWindow"  WindowStartupLocation="CenterScreen" WindowState="Maximized"  >
+    <Window.Resources>
+        <mdt:PieChartList x:Key="orgPieSource"></mdt:PieChartList>
+        <DataTemplate x:Key="orgPieDataTemplate">
+            <Grid Height="146" Width="126">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <amq:PieChart x:Name="pie" TitleMemberPath="Title" ValueMemberPath="Value" DataSource="{Binding PieDataSource}" Tag="" LegendVisibility="Collapsed" />
+                <TextBlock Grid.Row="2" Text="{Binding HeaderDesc}" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Name="_layout">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <WrapPanel ItemWidth="126" ItemHeight="146">
+            <amq:PieChart x:Name="pie1" TitleMemberPath="Title" ValueMemberPath="Value" Tag="" />
+            <amq:PieChart x:Name="pie2" TitleMemberPath="Title" ValueMemberPath="Value" Tag="" />
+        </WrapPanel>
+
+        <ListView Grid.Row="1"  ItemTemplate="{StaticResource orgPieDataTemplate}" ItemsSource="{Binding Source={StaticResource orgPieSource}}"> 
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel ItemWidth="126" ItemHeight="146"  Width="{Binding ElementName=_layout, Path=ActualWidth}" IsItemsHost="True"></WrapPanel> 
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        
+        <StackPanel Grid.Row="2">
+            <Button x:Name="AddDataButton" Content="Add data" Click="AddDataButton_Click" />
+            <Button x:Name="RealTimeDataChanges" Content="Real-time data changes" Click="RealTimeDataChanges_Click" />
+        </StackPanel>
+        <WrapPanel>
+            <FlowDocumentPageViewer>
+                <FlowDocument>
+                    <List MarkerStyle="UpperRoman">
+
+                        <ListItem>
+
+                            <Paragraph>this area shows as list item</Paragraph>
+
+                        </ListItem>
+
+                        <ListItem>
+
+                            <Paragraph>this area shows as list item</Paragraph>
+
+                        </ListItem>
+
+                        <ListItem>
+
+                            <Paragraph>this area shows as list item</Paragraph>
+
+                        </ListItem>
+
+                        <ListItem>
+
+                            <Paragraph>this area shows as list item</Paragraph>
+
+                        </ListItem>
+
+                    </List>
+                </FlowDocument>
+            </FlowDocumentPageViewer>
+        </WrapPanel>
+    </Grid>
+</Window>

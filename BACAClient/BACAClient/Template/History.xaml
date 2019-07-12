@@ -1,0 +1,28 @@
+﻿<UserControl  x:Class="BACAClient.Template.History" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.Template"  Height="60" Width="900" Cursor="Hand" HorizontalAlignment="Center" xmlns:p1="http://schemas.microsoft.com/winfx/2006/xaml/presentation" >
+    <Border Border.BorderBrush="#FF999999" Border.BorderThickness="0,0,0,1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid Name="grid" Panel.Background="#FFFFFFFF">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ColumnDefinition.Width="50" />
+                <ColumnDefinition ColumnDefinition.Width="50" />
+                <ColumnDefinition ColumnDefinition.Width="100" />
+                <ColumnDefinition />
+                <ColumnDefinition ColumnDefinition.Width="100" />
+                <ColumnDefinition ColumnDefinition.Width="100" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="index" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" />
+            <Image Name="Icon" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="16" Width="16" />
+            <TextBlock Name="Type" Grid.Column="2" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+            <TextBlock Name="Name" Grid.Column="3" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+            <TextBlock Name="CreateTime" Grid.Column="4" TextBlock.Foreground="#FF333333" HorizontalAlignment="Center" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+            <UserControl:Button x:Name="DeleteOne" Click="DeleteOne_Click" TypeName="DeleteOne" Grid.Column="5" UIElement.Visibility="Hidden" Width="70" Height="25" ContentControl.Content="删除" HorizontalAlignment="Center" VerticalAlignment="Center" Control.BorderBrush="#FF3399CC" Control.BorderThickness="1" Control.Foreground="#FF3399CC" xmlns:UserControl="clr-namespace:BACAClient.Template" />
+        </Grid>
+    </Border>
+</UserControl>
+ 
+
+ 

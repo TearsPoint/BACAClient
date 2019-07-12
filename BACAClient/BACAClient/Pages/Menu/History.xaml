@@ -1,0 +1,40 @@
+﻿<local:BasePage x:Class="BACAClient.Pages.Menu.History"  
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:BACAClient.Header"   Page.Title="History"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition RowDefinition.Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Border.BorderBrush="#FF999999" Border.BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition ColumnDefinition.Width="270" />
+                </Grid.ColumnDefinitions>
+                <WrapPanel VerticalAlignment="Center" Margin="42,0,0,0">
+                    <Label ContentControl.Content="浏览记录" Control.Foreground="#FF999999" Style="{DynamicResource MyLabelStyles}" />
+                    <Label Name="Number" ContentControl.Content="0" Control.Foreground="#FF3399CC" Style="{DynamicResource MyLabelStyles}" Margin="5,0" />
+                    <Label ContentControl.Content="条" Control.Foreground="#FF999999" Style="{DynamicResource MyLabelStyles}" />
+                </WrapPanel>
+                <WrapPanel Grid.Column="1" VerticalAlignment="Center">
+                    <UserControl:TimeSort x:Name="TimeSort" Click="TimeSort_Click" Width="110" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Control.BorderBrush="#FF169BD5" Control.BorderThickness="1" 
+                                          xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                    <UserControl:Button x:Name="Empty" Click="EmptyHistory_Click" TypeName="Empty" Margin="10,0,0,0" Width="110" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" ContentControl.Content="清空历史" BackGround="#FFFFFF" Hover="#FFFFFF" Control.Foreground="#FF169BD5" Control.BorderBrush="#FF169BD5" Control.BorderThickness="1" ToolTip="清空历史"
+                                        xmlns:UserControl="clr-namespace:BACAClient.Template" />
+                </WrapPanel>
+            </Grid>
+        </Border>
+        <Grid Name="IsNull" Grid.Row="1" UIElement.Visibility="Hidden">
+            <TextBlock Name="NullData" TextBlock.FontSize="28" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" />
+        </Grid>
+        <ScrollViewer Name="NotNull" Grid.Row="1" Style="{DynamicResource ScrollViewerStyle}">
+            <StackPanel x:Name="List" HorizontalAlignment="Center" />
+        </ScrollViewer>
+    </Grid>
+</local:BasePage>
+ 
+
+ 

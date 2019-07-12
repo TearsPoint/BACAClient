@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="MyCheckBox" Style.TargetType="{x:Type CheckBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.FontFamily" Setter.Value="微软雅黑" />
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF666666" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+    </Style>
+</ResourceDictionary>

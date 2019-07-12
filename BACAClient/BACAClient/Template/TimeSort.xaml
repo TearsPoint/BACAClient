@@ -1,0 +1,16 @@
+﻿<UserControl  x:Class="BACAClient.Template.TimeSort" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.Template"  Width="106" Height="28" Cursor="Hand" Tag="desc" >
+    <Grid>
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock TextBlock.Text="时间排序" TextBlock.TextWrapping="NoWrap" TextBlock.Foreground="#FF169BD5" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" />
+            <Image Name="Icon" Margin="5,0,0,0" Source="pack://application:,,,/BACAClient;component/Images/Pages/Menu/History/desc.png" Height="10" Width="10" Cursor="Hand" />
+        </WrapPanel>
+    </Grid>
+</UserControl>
+ 
+
+ 

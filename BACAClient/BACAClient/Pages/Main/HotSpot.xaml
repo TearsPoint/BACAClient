@@ -1,0 +1,52 @@
+﻿<base:BasePage x:Class="BACAClient.Pages.Main.HotSpot" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+        xmlns:base="clr-namespace:BACAClient.Header"  base:BasePage.Loaded="_Loaded" base:BasePage.SizeChanged="_SizeChanged" Page.Title="HotSpot" MinWidth="260" >
+    <Grid Margin="20,0">
+        <StackPanel Name="_sp">
+            <Border Grid.Row="1" Border.BorderBrush="#FF1384C9" Border.BorderThickness="0,0,0,1" Tag="0" Border.Background="#FFFFFFFF">
+                <Grid>
+                    <Image VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,5" Height="23" Width="26" Source="pack://application:,,,/BACAClient;component/Images/Pages/Index/Left/icon21.png" />
+                    <Label Name="Title1" ContentControl.Content="近期热门" Control.FontSize="16" Margin="30,0,0,5" Control.Foreground="#FF1384C9" Control.FontWeight="Bold" Style="{DynamicResource MyLabelStyles}" VerticalAlignment="Bottom" />
+                    <TextBlock TextBlock.Name="More1" Margin="0,0,40,5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+          <Hyperlink TextElement.Foreground="#FF3399CC" Style="{StaticResource hyberlinkEffect}">
+            查看更多
+          </Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Border>
+            <WrapPanel Name="Hot" Grid.Row="2" />
+            <Border Grid.Row="1" Border.BorderBrush="#FF1384C9" Border.BorderThickness="0,0,0,1" Tag="0" Border.Background="#FFFFFFFF">
+                <Grid>
+                    <Image VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,5" Height="23" Width="26" Source="pack://application:,,,/BACAClient;component/Images/Pages/Index/Left/icon21.png" />
+                    <Label Name="Title12" ContentControl.Content="近期热门" Control.FontSize="16" Margin="30,0,0,5" Control.Foreground="#FF1384C9" Control.FontWeight="Bold" Style="{DynamicResource MyLabelStyles}" VerticalAlignment="Bottom" />
+                    <TextBlock TextBlock.Name="More12" Margin="0,0,40,5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+          <Hyperlink TextElement.Foreground="#FF3399CC" Style="{StaticResource hyberlinkEffect}">
+            查看更多
+          </Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Border>
+            <WrapPanel Name="Hot2" Grid.Row="2" />
+        </StackPanel>
+
+
+        <!--<Border Grid.Row="4" Border.BorderBrush="#FF1384C9" Border.BorderThickness="0,0,0,1" Tag="1" Border.Background="#FFFFFFFF">
+            <Grid>
+                <Image VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,5" Height="23" Width="26" Source="pack://application:,,,/BACAClient;component/Images/Pages/Index/Left/icon22.png" />
+                <Label Name="Title2" ContentControl.Content="点赞推荐" Control.FontSize="16" Margin="30,0,0,5" Control.Foreground="#FF1384C9" Control.FontWeight="Bold" Style="{DynamicResource MyLabelStyles}" VerticalAlignment="Bottom" />
+                <TextBlock TextBlock.Name="More2" Margin="0,0,40,5" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+          <Hyperlink TextElement.Foreground="#FF3399CC" Style="{StaticResource hyberlinkEffect}">
+            查看更多
+          </Hyperlink>
+                </TextBlock>
+            </Grid>
+        </Border>
+        <WrapPanel Name="Good" Grid.Row="5" />-->
+    </Grid>
+</base:BasePage>
+ 
+
+ 

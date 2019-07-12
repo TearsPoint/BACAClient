@@ -1,0 +1,21 @@
+﻿<base:BasePage  x:Class="BACAClient.Pages.Type.DocDetail" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+        xmlns:base="clr-namespace:BACAClient.Header"
+                base:BasePage.SizeChanged="_SizeChanged" Page.Title="DocDetail" >
+    <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ColumnDefinition.Width="30" />
+            <ColumnDefinition />
+            <ColumnDefinition ColumnDefinition.Width="30" />
+        </Grid.ColumnDefinitions>
+        <template:PageLeft x:Name="pageleft" Click="Previous" Width="30" Height="375" xmlns:p5="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:template="clr-namespace:BACAClient.Template.HisDetail" />
+        <WindowsFormsHost Name="XmlData" Grid.Column="1" WindowsFormsHost.Background="#FFFFFFFF" />
+        <template:PageRight x:Name="pageright" Click="Next" Width="30" Height="375" Grid.Column="2" xmlns:p5="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:template="clr-namespace:BACAClient.Template.HisDetail" />
+    </Grid>
+</base:BasePage>
+ 
+
+ 

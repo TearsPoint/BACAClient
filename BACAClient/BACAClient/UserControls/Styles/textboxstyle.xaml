@@ -1,0 +1,199 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="TxbBase" Style.TargetType="{x:Type TextBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF666666" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="FrameworkElement.Width" Setter.Value="150" />
+        <Setter Setter.Property="FrameworkElement.Height" Setter.Value="25" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="10,0,0,0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FFCCCCCC" />
+        <Setter Setter.Property="TextBoxBase.CaretBrush" Setter.Value="#FF666666" />
+        <Setter Setter.Property="FrameworkElement.ContextMenu">
+            <Setter.Value>
+                <ContextMenu UIElement.Visibility="Collapsed" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TxbTrigger" Style.TargetType="{x:Type TextBox}" Style.BasedOn="{StaticResource TxbBase}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type TextBox}">
+                    <Border Border.Name="border" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" Border.Background="{TemplateBinding Control.Background}" UIElement.SnapsToDevicePixels="True">
+                        <Grid>
+                            <ScrollViewer ScrollViewer.Name="PART_ContentHost" UIElement.Focusable="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
+                            <TextBlock TextBlock.Name="WaterMark" Margin="10,0,0,0" UIElement.Focusable="False" UIElement.Visibility="Collapsed" TextBlock.Text="{TemplateBinding Tag}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Opacity="0.56" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Trigger.Property="UIElement.IsEnabled" Trigger.Value="False">
+                            <Setter Setter.TargetName="border" Setter.Property="UIElement.Opacity" Setter.Value="0.56" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsMouseOver" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsKeyboardFocused" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="TextBox.Text" Value="">
+                            <Setter Setter.TargetName="WaterMark" Setter.Property="UIElement.Visibility" Setter.Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TxbBing" Style.TargetType="{x:Type TextBox}" Style.BasedOn="{StaticResource TxbBase}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type TextBox}">
+                    <Border Border.Name="border" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" Border.Background="{TemplateBinding Control.Background}" UIElement.SnapsToDevicePixels="True">
+                        <Grid>
+                            <ScrollViewer ScrollViewer.Name="PART_ContentHost" UIElement.Focusable="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
+                            <TextBlock TextBlock.Name="WaterMark" UIElement.Focusable="False" TextBlock.Text="{TemplateBinding Tag}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Opacity="0.5" UIElement.Visibility="{TemplateBinding Text,Converter={StaticResource TextToVisibility}}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Trigger.Property="UIElement.IsEnabled" Trigger.Value="False">
+                            <Setter Setter.TargetName="border" Setter.Property="UIElement.Opacity" Setter.Value="0.56" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsMouseOver" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsKeyboardFocused" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TxbBaseIcon" Style.TargetType="{x:Type TextBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF666666" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="FrameworkElement.Width" Setter.Value="337" />
+        <Setter Setter.Property="FrameworkElement.Height" Setter.Value="26" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="10,0,0,0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1,1,0,1" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FF3399CC" />
+        <Setter Setter.Property="TextBoxBase.CaretBrush" Setter.Value="#FF666666" />
+        <Setter Setter.Property="FrameworkElement.ContextMenu">
+            <Setter.Value>
+                <ContextMenu UIElement.Visibility="Collapsed" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TxbTriggerIcon" Style.TargetType="{x:Type TextBox}" Style.BasedOn="{StaticResource TxbBaseIcon}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type TextBox}">
+                    <Border Border.Name="border" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" Border.Background="{TemplateBinding Control.Background}" UIElement.SnapsToDevicePixels="True">
+                        <Grid>
+                            <ScrollViewer ScrollViewer.Name="PART_ContentHost" UIElement.Focusable="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
+                            <Image Name="WaterIcon" Source="pack://application:,,,/BACAClient;component/Images/Pages/Search/search_hui.png" Height="11" Width="11" Margin="10,0,0,0" UIElement.Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Left" UIElement.Opacity="0.56" />
+                            <TextBlock TextBlock.Name="WaterMark" Margin="23,0,0,0" UIElement.Focusable="False" UIElement.Visibility="Collapsed" TextBlock.Text="{TemplateBinding Tag}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Opacity="0.56" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Trigger.Property="UIElement.IsEnabled" Trigger.Value="False">
+                            <Setter Setter.TargetName="border" Setter.Property="UIElement.Opacity" Setter.Value="0.56" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsMouseOver" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsKeyboardFocused" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="TextBox.Text" Value="">
+                            <Setter Setter.TargetName="WaterMark" Setter.Property="UIElement.Visibility" Setter.Value="Visible" />
+                            <Setter Setter.TargetName="WaterIcon" Setter.Property="UIElement.Visibility" Setter.Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TxbBingIcon" Style.TargetType="{x:Type TextBox}" Style.BasedOn="{StaticResource TxbBaseIcon}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate ControlTemplate.TargetType="{x:Type TextBox}">
+                    <Border Border.Name="border" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" Border.Background="{TemplateBinding Control.Background}" UIElement.SnapsToDevicePixels="True">
+                        <Grid>
+                            <ScrollViewer ScrollViewer.Name="PART_ContentHost" UIElement.Focusable="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
+                            <Image Name="WaterIcon" Source="pack://application:,,,/BACAClient;component/Images/Pages/Search/search_hui.png" Height="11" Width="11" Margin="10,0,0,0" UIElement.Focusable="False" UIElement.Opacity="0.5" VerticalAlignment="Center" UIElement.Visibility="{TemplateBinding Text,Converter={StaticResource TextToVisibility}}" />
+                            <TextBlock TextBlock.Name="WaterMark" UIElement.Focusable="False" TextBlock.Text="{TemplateBinding Tag}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" UIElement.Opacity="0.5" UIElement.Visibility="{TemplateBinding Text,Converter={StaticResource TextToVisibility}}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Trigger.Property="UIElement.IsEnabled" Trigger.Value="False">
+                            <Setter Setter.TargetName="border" Setter.Property="UIElement.Opacity" Setter.Value="0.56" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsMouseOver" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                        <Trigger Trigger.Property="UIElement.IsKeyboardFocused" Trigger.Value="True">
+                            <Setter Setter.TargetName="border" Setter.Property="Border.BorderBrush" Setter.Value="#FF3399CC" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TextBoxStyles" Style.TargetType="{x:Type TextBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF333333" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="10,0,0,0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Top" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Top" />
+        <Setter Setter.Property="Control.Background" Setter.Value="#FFFFFFFF" />
+        <Setter Setter.Property="TextBoxBase.AcceptsReturn" Setter.Value="True" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FFCCCCCC" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1" />
+        <Setter Setter.Property="TextBox.TextWrapping" Setter.Value="Wrap" />
+        <Setter Setter.Property="TextBlock.LineHeight" Setter.Value="20" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+    </Style>
+    <Style x:Key="PageTextBox" Style.TargetType="{x:Type TextBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"> 
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF666666" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="12" />
+        <Setter Setter.Property="FrameworkElement.Width" Setter.Value="40" />
+        <Setter Setter.Property="FrameworkElement.Height" Setter.Value="22" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.Background" Setter.Value="{x:Null}" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FF999999" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+    </Style>
+    <Style x:Key="AddRecommendTextBox" Style.TargetType="{x:Type TextBox}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF000000" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Top" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Top" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FF3399CC" />
+        <Setter Setter.Property="TextBlock.LineHeight" Setter.Value="15" />
+        <Setter Setter.Property="TextBox.TextWrapping" Setter.Value="Wrap" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+    </Style>
+</ResourceDictionary>
+ 
+
+ 

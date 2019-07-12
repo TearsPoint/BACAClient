@@ -1,0 +1,16 @@
+﻿<Window x:Class="BACAClient.UserControls.Controls.Prompt" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.UserControls.Controls.FrontDesk"    Window.WindowStartupLocation="CenterScreen" Window.AllowsTransparency="True" Window.WindowStyle="None" Window.Topmost="True" Window.ShowInTaskbar="False" Window.ResizeMode="NoResize" Height="100" Width="200" Window.Title="Prompt" Control.Background="{x:Null}">
+    <Border Border.Background="#FFFFFFFF" Margin="5" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <UIElement.Effect>
+            <DropShadowEffect DropShadowEffect.BlurRadius="10" DropShadowEffect.ShadowDepth="0" />
+        </UIElement.Effect>
+        <TextBlock Name="data" TextBlock.Foreground="#FF74AFCC" TextBlock.FontWeight="Bold" HorizontalAlignment="Center" Style="{DynamicResource TextBlockStyle}" />
+    </Border>
+</Window>
+ 
+
+ 

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="BACAClient.Template.CourseItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BACAClient.Template"
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="190" Background="White" Margin="5" Cursor="Hand">
+    <UIElement.Effect >
+        <DropShadowEffect DropShadowEffect.BlurRadius="10" DropShadowEffect.ShadowDepth="0" />
+    </UIElement.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="190"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Name="_imgCourse" Stretch="Fill" Source="http://api.pigbanker.com/bankProgrammeResource/img/2018/08/10/1533885075487.jpg" Grid.ColumnSpan="2"></Image>
+        <Image Name="_imgTeacher" Grid.Row="1" Stretch="Fill" Width="36" Height="36" VerticalAlignment="Center" Source="http://api.pigbanker.com/bankProgrammeResource/img/2018/08/10/1533883291045.jpg"></Image>
+        <TextBlock Name="_tblDesc" FontSize="13" Style="{DynamicResource TextBlockStyle}" Grid.Row="1" Grid.Column="1" Text="desc" TextAlignment="Left" HorizontalAlignment="Left" FlowDirection="LeftToRight" TextWrapping="Wrap" ></TextBlock>
+    </Grid>
+</UserControl>

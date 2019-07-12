@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="Date" Style.TargetType="{x:Type DatePicker}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.FontFamily" Setter.Value="微软雅黑" />
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF999999" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="12" />
+        <Setter Setter.Property="FrameworkElement.Height" Setter.Value="25" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="10,0,0,0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.BorderThickness" Setter.Value="1" />
+        <Setter Setter.Property="Control.BorderBrush" Setter.Value="#FFCCCCCC" />
+        <Setter Setter.Property="FrameworkElement.ContextMenu">
+            <Setter.Value>
+                <ContextMenu UIElement.Visibility="Collapsed" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+ 
+
+ 

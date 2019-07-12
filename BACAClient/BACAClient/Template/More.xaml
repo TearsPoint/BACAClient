@@ -1,0 +1,41 @@
+﻿<UserControl  x:Class="BACAClient.Template.More" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:local="clr-namespace:BACAClient.Template"  Height="70" Width="900" Control.Background="#FFFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand">
+    <Border Border.BorderBrush="#FF999999" Border.BorderThickness="0,0,0,1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="1*" />
+                <RowDefinition RowDefinition.Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ColumnDefinition.Width="50" />
+                    <ColumnDefinition />
+                    <ColumnDefinition ColumnDefinition.Width="80" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="index" TextBlock.Foreground="#FF333333" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+                <TextBlock Name="Name" Grid.Column="1" TextBlock.Foreground="#FF333333" Style="{DynamicResource TextBlockStyle}" />
+                <WrapPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Name="Type" Height="16" Width="16" />
+                    <Image Name="Source" Height="20" Width="20" Margin="10,0,0,0" />
+                </WrapPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition ColumnDefinition.Width="120" />
+                    <ColumnDefinition />
+                    <ColumnDefinition ColumnDefinition.Width="100" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="CategoryName" TextBlock.TextWrapping="NoWrap" Style="{DynamicResource TextBlockStyle}" />
+                <TextBlock Name="Name_E" Grid.Column="1" Margin="10,0,0,0" Style="{DynamicResource TextBlockStyle}" />
+                <local:Button x:Name="Detail" Click="_Click" Grid.Column="2" TypeName="Detail" Width="70" Height="25" Control.Foreground="#FF3399CC" ContentControl.Content="查看详细" BackGround="white" Control.BorderBrush="#FF3399CC" Control.BorderThickness="1" Hover="white" UIElement.Visibility="Hidden" xmlns:p6="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
+ 
+
+ 

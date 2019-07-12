@@ -1,0 +1,19 @@
+<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/Menu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/TabControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/Hyperlink.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/Label.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/CheckBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/ComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/RadioButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/TextBlock.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/PasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/TextBoxStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/UserControls/Styles/WebBrowser.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
+ 
+
+ 

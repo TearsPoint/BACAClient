@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="MyRadioButtonStyles" Style.TargetType="{x:Type RadioButton}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="Control.Foreground" Setter.Value="#FF333333" />
+        <Setter Setter.Property="Control.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="Control.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="Control.HorizontalContentAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="Control.VerticalContentAlignment" Setter.Value="Center" />
+    </Style>
+</ResourceDictionary>
+ 
+
+ 

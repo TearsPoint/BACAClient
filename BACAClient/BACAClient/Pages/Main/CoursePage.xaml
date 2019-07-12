@@ -1,0 +1,53 @@
+﻿<base:BasePage  x:Class="BACAClient.Pages.Main.CoursePage" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+        xmlns:uc="clr-namespace:BACAClient.Template" 
+             mc:Ignorable="d" 
+        xmlns:base="clr-namespace:BACAClient.Header" Page.Title="Index"  d:DesignWidth="1096"  Margin="5">
+    <ScrollViewer>
+        <Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="360"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition ColumnDefinition.Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Border  Background="Orange" > 
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition RowDefinition.Height="360"/> 
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="290" Height="290" Stretch="Fill" Name="_imgTeacherHeader" Source="http://api.pigbanker.com/bankProgrammeResource/img/2018/08/10/1533883291045.jpg" ></Image>
+                </Grid>
+                
+            </Border> 
+            
+            <Border Grid.Row="1" Background="White" Border.BorderThickness="0,0,1,0" Margin="0,10" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition RowDefinition.Height="300"/> 
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="350"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                </Grid>
+                
+            </Border> 
+        </Grid>
+    </ScrollViewer>
+</base:BasePage>
+ 
+
+ 

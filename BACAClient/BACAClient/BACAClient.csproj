@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{519FA0DB-A46E-43EE-988C-2F740A8EDA89}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BACAClient</RootNamespace>
+    <AssemblyName>BACAClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppResource.cs" />
+    <Compile Include="Chart\AreaGraph.cs" />
+    <Compile Include="Chart\Balloon.cs" />
+    <Compile Include="Chart\BindingEvaluator.cs" />
+    <Compile Include="Chart\CategoryAxis.cs" />
+    <Compile Include="Chart\ColumnGraph.cs" />
+    <Compile Include="Chart\DataPathEventArgs.cs" />
+    <Compile Include="Chart\DiscreetClearObservableCollection.cs" />
+    <Compile Include="Chart\ILegendItem.cs" />
+    <Compile Include="Chart\Indicator.cs" />
+    <Compile Include="Chart\Legend.cs" />
+    <Compile Include="Chart\LegendItem.cs" />
+    <Compile Include="Chart\LineGraph.cs" />
+    <Compile Include="Chart\PieChart.cs" />
+    <Compile Include="Chart\SerialChart.cs" />
+    <Compile Include="Chart\SerialGraph.cs" />
+    <Compile Include="Chart\Slice.cs" />
+    <Compile Include="Chart\TextBlockHelper.cs" />
+    <Compile Include="Chart\TreeHelper.cs" />
+    <Compile Include="Chart\ValueAxis.cs" />
+    <Compile Include="Chart\ValueGrid.cs" />
+    <Compile Include="Common\ConfigerHelper.cs" />
+    <Compile Include="Common\CacheHelper.cs" />
+    <Compile Include="Common\DownLoadUtils.cs" />
+    <Compile Include="Common\HtmlUtils.cs" />
+    <Compile Include="Common\ApplicationInfo.cs" />
+    <Compile Include="Common\LocalDllUtils.cs" />
+    <Compile Include="Common\ReplaceUtils.cs" />
+    <Compile Include="Common\PageUtils.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
+    <Compile Include="Header\BasePage.cs" />
+    <Compile Include="Logon\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logon\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logon\Logon.xaml.cs">
+      <DependentUpon>Logon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MDT\PieItemData.cs" />
+    <Compile Include="Pages\Main\CoursePage.xaml.cs">
+      <DependentUpon>CoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\TeacherPage.xaml.cs">
+      <DependentUpon>TeacherPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Menu\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Type\kdp.xaml.cs">
+      <DependentUpon>kdp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ApiList.cs" />
+    <Compile Include="Repository\BACARepository.cs" />
+    <Compile Include="Template\CourseItem.xaml.cs">
+      <DependentUpon>CourseItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ImageSwitchView.xaml.cs">
+      <DependentUpon>ImageSwitchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\RollImg.xaml.cs">
+      <DependentUpon>RollImg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Viewport3DControl.xaml.cs">
+      <DependentUpon>Viewport3DControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\FrontDesk\GoodSuccess.xaml.cs">
+      <DependentUpon>GoodSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\FrontDesk\RapidRetrieval.xaml.cs">
+      <DependentUpon>RapidRetrieval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\FrontDesk\TypeRetrieve.xaml.cs">
+      <DependentUpon>TypeRetrieve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controls\Prompt.xaml.cs">
+      <DependentUpon>Prompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\PageSwitch.cs" />
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.cs" />
+    <Compile Include="Common\CloseUtils.cs" />
+    <Compile Include="Common\ShowEvent.cs" />
+    <Compile Include="OtherWindow\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Announcement.xaml.cs">
+      <DependentUpon>Announcement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\DocMore.xaml.cs">
+      <DependentUpon>DocMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Feedback.xaml.cs">
+      <DependentUpon>Feedback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Flash.xaml.cs">
+      <DependentUpon>Flash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\GoodSuccess.xaml.cs">
+      <DependentUpon>GoodSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\PDF.xaml.cs">
+      <DependentUpon>PDF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OtherWindow\Prompt.xaml.cs">
+      <DependentUpon>Prompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\Announcement.xaml.cs">
+      <DependentUpon>Announcement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\Collection.xaml.cs">
+      <DependentUpon>Collection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\HotSpot.xaml.cs">
+      <DependentUpon>HotSpot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\MoreHotSpot.xaml.cs">
+      <DependentUpon>MoreHotSpot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\RapidRetrieval.xaml.cs">
+      <DependentUpon>RapidRetrieval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Menu\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Menu\Help1.xaml.cs">
+      <DependentUpon>Help1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Type\DocDetail.xaml.cs">
+      <DependentUpon>DocDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Type\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Type\RelateInfo.xaml.cs">
+      <DependentUpon>RelateInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Type\TypeRetrieve.xaml.cs">
+      <DependentUpon>TypeRetrieve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="single.cs" />
+    <Compile Include="Template\Announcement.xaml.cs">
+      <DependentUpon>Announcement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Collection.xaml.cs">
+      <DependentUpon>Collection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\Download.xaml.cs">
+      <DependentUpon>Download.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\Forward.xaml.cs">
+      <DependentUpon>Forward.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\Good.xaml.cs">
+      <DependentUpon>Good.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\Nav.xaml.cs">
+      <DependentUpon>Nav.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\PageLeft.xaml.cs">
+      <DependentUpon>PageLeft.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\PageRight.xaml.cs">
+      <DependentUpon>PageRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\ReInfo.xaml.cs">
+      <DependentUpon>ReInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HisDetail\Relational.xaml.cs">
+      <DependentUpon>Relational.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\IndexInfo.xaml.cs">
+      <DependentUpon>IndexInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\More.xaml.cs">
+      <DependentUpon>More.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\RapidRetrieval.xaml.cs">
+      <DependentUpon>RapidRetrieval.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TabControl.xaml.cs">
+      <DependentUpon>TabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TimeSort.xaml.cs">
+      <DependentUpon>TimeSort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TwoNav.xaml.cs">
+      <DependentUpon>TwoNav.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Controllers\OpenWindows.cs" />
+    <Compile Include="UserControls\Controllers\UserActionUtils.cs" />
+    <Page Include="Chart\Themes\AreaGraph.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\Balloon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\CategoryAxis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\ColumnGraph.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\Indicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\Legend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\LineGraph.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\PieChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\SerialChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\Slice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\ValueAxis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Chart\Themes\ValueGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Logon\Profile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Logon\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Logon\Logon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controllers\OpenWindows.cs" />
+    <Compile Include="Controllers\UserActionUtils.cs" />
+    <Page Include="OtherWindow\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\Announcement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\DocMore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="OtherWindow\Feedback.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="OtherWindow\Flash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\GoodSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\PDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherWindow\Prompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\Announcement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\Collection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\HotSpot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\CoursePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Main\TeacherPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Main\Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\MoreHotSpot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main\RapidRetrieval.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Menu\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Menu\Help1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Menu\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Pages\Type\DocDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Type\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Type\kdp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Pages\Type\RelateInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Type\TypeRetrieve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\Announcement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\Collection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\CourseItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\Download.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\Forward.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\Good.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\Nav.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\PageLeft.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\PageRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\ReInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\HisDetail\Relational.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\ImageSwitchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Template\IndexInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\More.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\RapidRetrieval.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\RollImg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\TimeSort.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\TwoNav.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Template\Viewport3DControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\FrontDesk\GoodSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\FrontDesk\RapidRetrieval.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\FrontDesk\TypeRetrieve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Controls\Prompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Styles\checkbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Styles\combobox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Styles\datepicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Styles\hyperlink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\label.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\passwordbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\radiobutton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\scrollviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\tabcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\textblock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\textboxstyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Styles\webbrowser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{12c3ca19-cfa6-4c1f-bc9a-c06c0c865806}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsonModel\JsonModel.csproj">
+      <Project>{5d1207ec-e156-456b-a563-a9507fa21f91}</Project>
+      <Name>JsonModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo\logo.ico" />
+    <Resource Include="Images\logo\logo.png" />
+    <Resource Include="Images\logo\u1254.png" />
+    <Resource Include="Images\mainwindow\good\ss_good.png" />
+    <Resource Include="Images\mainwindow\good\u1471.png" />
+    <Resource Include="Images\mainwindow\icon\close_u1268.png" />
+    <Resource Include="Images\mainwindow\icon\menu_hover.png" />
+    <Resource Include="Images\mainwindow\icon\min_hover.png" />
+    <Resource Include="Images\mainwindow\icon\right_1.png" />
+    <Resource Include="Images\mainwindow\icon\right_2.png" />
+    <Resource Include="Images\mainwindow\icon\right_3.png" />
+    <Resource Include="Images\mainwindow\icon\right_4.png" />
+    <Resource Include="Images\mainwindow\icon\u1247.png" />
+    <Resource Include="Images\mainwindow\navicon\u1179_selected.png" />
+    <Resource Include="Images\mainwindow\nav\enter.png" />
+    <Resource Include="Images\mainwindow\nav\h1.png" />
+    <Resource Include="Images\mainwindow\nav\h2.png" />
+    <Resource Include="Images\mainwindow\nav\h3.png" />
+    <Resource Include="Images\mainwindow\nav\top_hoverbkcolor.png" />
+    <Resource Include="Images\mainwindow\smalllogo\smalllogo.png" />
+    <Resource Include="Images\mainwindow\twonav\in_two_nav.png" />
+    <Resource Include="Images\mainwindow\twonav\two_nav.png" />
+    <Resource Include="Images\otherwindow\abouthis\u1437.png" />
+    <Resource Include="Images\otherwindow\abouthis\u1441.png" />
+    <Resource Include="Images\otherwindow\abouthis\u1449.png" />
+    <Resource Include="Images\otherwindow\abouthis\u1449_mouseover.png" />
+    <Resource Include="Images\otherwindow\abouthis\u7.png" />
+    <Resource Include="Images\otherwindow\detail\u1459.png" />
+    <Resource Include="Images\otherwindow\detail\u1537.png" />
+    <Resource Include="Images\otherwindow\detail\u1545.png" />
+    <Resource Include="Images\otherwindow\detail\u1549.png" />
+    <Resource Include="Images\otherwindow\u1449.png" />
+    <Resource Include="Images\otherwindow\u1449_mouseover.png" />
+    <Resource Include="Images\otherwindow\u7.png" />
+    <Resource Include="Images\pages\index\left\0_u81.png" />
+    <Resource Include="Images\pages\index\left\0_u81_selected.png" />
+    <Resource Include="Images\pages\index\left\btn0_u112.png" />
+    <Resource Include="Images\pages\index\left\btndetail_u102_mouseover.png" />
+    <Resource Include="Images\pages\index\left\icon1.png" />
+    <Resource Include="Images\pages\index\left\icon2.png" />
+    <Resource Include="Images\pages\index\left\icon21.png" />
+    <Resource Include="Images\pages\index\left\icon22.png" />
+    <Resource Include="Images\pages\index\left\icon23.png" />
+    <Resource Include="Images\pages\index\left\icon3.png" />
+    <Resource Include="Images\pages\index\left\icon4.png" />
+    <Resource Include="Images\pages\index\left\icon5.png" />
+    <Resource Include="Images\pages\index\left\icon6.png" />
+    <Resource Include="Images\pages\index\left\u110.png" />
+    <Resource Include="Images\pages\index\left\u61.png" />
+    <Resource Include="Images\pages\index\left\u68.png" />
+    <Resource Include="Images\pages\index\left\u94.png" />
+    <Resource Include="Images\pages\index\right\favbackup_u176.png" />
+    <Resource Include="Images\pages\index\right\favbackup_u176_mouseover.png" />
+    <Resource Include="Images\pages\index\right\favcount_u186.png" />
+    <Resource Include="Images\pages\index\right\icon1.png" />
+    <Resource Include="Images\pages\index\right\icon11.png" />
+    <Resource Include="Images\pages\index\right\icon2.png" />
+    <Resource Include="Images\pages\index\right\icon21.png" />
+    <Resource Include="Images\pages\index\right\icon3.png" />
+    <Resource Include="Images\pages\index\right\icon31.png" />
+    <Resource Include="Images\pages\index\right\icon4.png" />
+    <Resource Include="Images\pages\index\right\icon41.png" />
+    <Resource Include="Images\pages\index\right\icon5.png" />
+    <Resource Include="Images\pages\index\right\icon51.png" />
+    <Resource Include="Images\pages\index\right\icon6.png" />
+    <Resource Include="Images\pages\index\right\icon61.png" />
+    <Resource Include="Images\pages\index\right\u119.png" />
+    <Resource Include="Images\pages\index\right\u121.png" />
+    <Resource Include="Images\pages\index\right\u155.png" />
+    <Resource Include="Images\pages\index\right\u191.png" />
+    <Resource Include="Images\pages\index\right\u191_mouseover.png" />
+    <Resource Include="Images\pages\menu\history\asc.png" />
+    <Resource Include="Images\pages\menu\history\desc.png" />
+    <Resource Include="Images\pages\menu\history\u1070.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r1.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r1_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r2.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r2_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r4.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r4_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r5.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r5_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r6.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\r6_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u1.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u1_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u2.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u2_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u382.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u4.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u4_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u5.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u5_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u6.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\u6_hover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\white_download.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\white_good.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\x_left.png" />
+    <Resource Include="Images\pages\nav\hisdetail\icon\x_right.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow1.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow2.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow4.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow5.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\arrow6.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\bg.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\bghover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\enter1.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\enter2.png" />
+    <Resource Include="Images\pages\nav\hisdetail\nav\enter6.png" />
+    <Resource Include="Images\pages\nav\hisdetail\page\left.png" />
+    <Resource Include="Images\pages\nav\hisdetail\page\lefthover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\page\right.png" />
+    <Resource Include="Images\pages\nav\hisdetail\page\righthover.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate1.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate2.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate3.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate4.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate5.png" />
+    <Resource Include="Images\pages\nav\hisdetail\related\relate6.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg1.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg2.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg3.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg4.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg5.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg6.png" />
+    <Resource Include="Images\pages\nav\hislist\list\bg_hover.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download1.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download2.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download3.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download4.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download5.png" />
+    <Resource Include="Images\pages\nav\hislist\list\download6.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good1.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good2.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good3.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good4.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good5.png" />
+    <Resource Include="Images\pages\nav\hislist\list\good6.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav1.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav2.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav3.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav4.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav5.png" />
+    <Resource Include="Images\pages\nav\hislist\list\nav6.png" />
+    <Resource Include="Images\pages\nav\hislist\treeview\bg.png" />
+    <Resource Include="Images\pages\search\icon1.png" />
+    <Resource Include="Images\pages\search\icon2.png" />
+    <Resource Include="Images\pages\search\icon3.png" />
+    <Resource Include="Images\pages\search\icon4.png" />
+    <Resource Include="Images\pages\search\icon5.png" />
+    <Resource Include="Images\pages\search\icon6.png" />
+    <Resource Include="Images\pages\search\icon_self.png" />
+    <Resource Include="Images\pages\search\or_download.png" />
+    <Resource Include="Images\pages\search\or_good.png" />
+    <Resource Include="Images\pages\search\search_hui.png" />
+    <Resource Include="Images\pdf\close_u1268.png" />
+    <Resource Include="Images\pdf\close_u1268_mouseover.png" />
+    <Resource Include="Images\pdf\down_u1266.png" />
+    <Resource Include="Images\pdf\down_u1266_mouseover.png" />
+    <Resource Include="Images\pdf\up_u1268_mouseover.png" />
+    <Resource Include="Images\pdf\up_u1278.png" />
+    <Resource Include="Images\pdf\wait.gif" />
+    <Resource Include="Images\pdf\xz_bai.png" />
+    <Resource Include="Images\pdf\xz_hui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pages\menu\help\help9.12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\barbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\left_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\menu_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\function_bg.png" />
+    <Resource Include="Images\mainwindow\nav\h10.png" />
+    <Resource Include="Images\mainwindow\star1.png" />
+    <Resource Include="Images\mainwindow\start2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\nav\h11.png" />
+    <Resource Include="Images\mainwindow\nav\h12.png" />
+    <Resource Include="Images\mainwindow\nav\h13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\logon.png" />
+    <Resource Include="Images\mainwindow\logon_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\qq.png" />
+    <Resource Include="Images\mainwindow\wx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\setting_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\row_split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\txt_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\header.png" />
+    <Resource Include="Images\mainwindow\header_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainwindow\teacher_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rollimg\img1.png" />
+    <Resource Include="Images\rollimg\img2.png" />
+    <Resource Include="Images\rollimg\img3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(SolutionDir)BACAClient\Images\*.*  $(SolutionDir)BACAClient\bin\Resources\Images\   /E /D /Y /R</PostBuildEvent>
+  </PropertyGroup>
+</Project>

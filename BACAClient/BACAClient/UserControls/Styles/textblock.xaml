@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Style x:Key="TextBlockStyle" Style.TargetType="{x:Type TextBlock}" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <Setter Setter.Property="TextBlock.Foreground" Setter.Value="#FF666666" />
+        <Setter Setter.Property="TextBlock.FontSize" Setter.Value="14" />
+        <Setter Setter.Property="TextBlock.Padding" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.Margin" Setter.Value="0" />
+        <Setter Setter.Property="FrameworkElement.HorizontalAlignment" Setter.Value="Left" />
+        <Setter Setter.Property="TextBlock.TextAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="FrameworkElement.VerticalAlignment" Setter.Value="Center" />
+        <Setter Setter.Property="TextBlock.TextTrimming" Setter.Value="WordEllipsis" />
+        <Setter Setter.Property="TextBlock.TextWrapping" Setter.Value="Wrap" />
+        <Setter Setter.Property="TextBlock.LineHeight" Setter.Value="20" />
+        <Setter Setter.Property="FrameworkElement.Cursor" Setter.Value="Hand" />
+    </Style>
+</ResourceDictionary>
+ 
+
+ 
